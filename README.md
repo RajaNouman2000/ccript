@@ -14,8 +14,10 @@ Run the application, and enter the desired number (e.g., 100) in the function to
 
 
 **API Endpoint**
-**Endpoint**: http://localhost:8080/api/users
-**Method**: GET
+Endpoint: http://localhost:8080/api/users
+Method: GET
+
+
 **Query Parameters**:
 **pageNumber**: Page number for pagination (default: 1).
 **perPage**: Number of items per page (default: 10).
