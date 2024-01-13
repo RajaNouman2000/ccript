@@ -1,22 +1,27 @@
 **Setup**
 **Set Environment Variables:**
+
 Create a file named .env based on the .env_example file and set the required variables.
 
 **Install Dependencies:**
+
 Run the following command to install all the required packages:
-npm install
+
+**npm install**
 
 **Database Initialization**
 
 **Uncomment the following line in your code:**
-// dumpRandomUsersToDatabase(100);
+
+// dumpRandomUsersToDatabase(100);  in app.js
+
 Run the application, and enter the desired number (e.g., 100) in the function to populate the user table with random data. After successful data insertion, commit the changes.
 
 
 **API Endpoint**
 
-Endpoint: http://localhost:8080/api/users
-Method: GET
+**Endpoint**: http://localhost:8080/api/users
+**Method**: GET
 
 
 **Query Parameters**:
