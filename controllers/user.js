@@ -1,7 +1,7 @@
 import pkg, { ValidationError } from "sequelize";
 const { DataTypes, Sequelize, Op } = pkg;
 import { isValid, format } from "date-fns";
-import { User, validateUser } from "../models/user.js";;
+import { User, validateUser } from "../models/user.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -13,6 +13,26 @@ export const getUsers = async (req, res) => {
     const endAge = parseInt(req.query.endAge) || false;
     const startDate = req.query.startDate || false;
     const endDate = req.query.endDate || false;
+
+    console.log(startAge,endAge)
+    // Check if startAge is a valid integer
+    if (isNaN(startAge) || !Number.isInteger(startAge)) {
+      return res
+        .status(400)
+        .json({
+            success: false,
+          error: "Invalid startAge parameter. It should be an integer.",
+        });
+    }
+
+    // Check if endAge is a valid integer
+    if (isNaN(endAge) || !Number.isInteger(endAge)) {
+      return res
+        .status(400)
+        .json({ 
+            success: false,
+            error: "Invalid endAge parameter. It should be an integer." });
+    }
 
     // Calculate the skip value based on the page number
     const skip = (pageNumber - 1) * perPage;
